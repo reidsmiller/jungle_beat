@@ -114,5 +114,21 @@ RSpec.describe LinkedList do
       expect(list.includes?("deep")).to be true
       expect(list.includes?("dep")).to be false
     end
+
+    it 'can pop last item on string and return it' do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+
+      pop1 = list.pop
+      pop2 = list.pop
+
+      expect(pop1).to eq("blop")
+      expect(pop2).to eq("shu")
+      expect(list.to_string).to eq("deep woo shi")
+    end
   end
 end
