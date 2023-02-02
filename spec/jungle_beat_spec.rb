@@ -12,7 +12,7 @@ RSpec.describe JungleBeat do
       expect(jb.list.head).to be nil
     end
 
-    xit 'can append multiple strings into link chain' do
+    it 'can append multiple strings into link chain' do
       jb = JungleBeat.new
 
       jb.append("deep doo ditt")
