@@ -34,5 +34,13 @@ RSpec.describe LinkedList do
 
       expect(list.head.next_node.data).to eq("deep")
     end
+
+    it 'can count multiple nodes' do
+      list = LinkedList.new
+      list.append("doop")
+      list.append("deep")
+
+      expect(list.count).to eq(2)
+    end
   end
 end
