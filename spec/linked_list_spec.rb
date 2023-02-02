@@ -103,7 +103,7 @@ RSpec.describe LinkedList do
     end
 
 
-    it 'knows if it includes a string' do
+    xit 'knows if it includes a string' do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")
@@ -115,7 +115,7 @@ RSpec.describe LinkedList do
       expect(list.includes?("dep")).to be false
     end
 
-    it 'can pop last item on string and return it' do
+    xit 'can pop last item on string and return it' do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")

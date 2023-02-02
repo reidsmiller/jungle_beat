@@ -52,6 +52,11 @@ class LinkedList
     count
   end
   
+  def find(index, length)
+    arr = self.to_array
+    arr[index, length].join(" ")
+  end
+
   def to_string
     array = []
     if head == nil
@@ -65,5 +70,19 @@ class LinkedList
       array << current_node.data
     end
     array.join(" ")
+  end
+
+  def to_array
+    array = []
+    if head == nil
+      p "No data in head"
+    else
+      current_node = head
+      while current_node.next_node != nil
+        array << current_node.data
+        current_node = current_node.next_node
+      end
+      array << current_node.data
+    end
   end
 end
