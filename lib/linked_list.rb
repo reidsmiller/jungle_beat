@@ -31,6 +31,16 @@ class LinkedList
     count
   end
 
+  def prepend(string)
+    if head == nil
+      self.head = Node.new(string)
+    else
+      new_node = Node.new(string)
+      new_node.next_node = head
+      self.head = new_node
+    end
+  end
+
   def to_string
     array = []
     if head == nil
