@@ -115,7 +115,7 @@ RSpec.describe LinkedList do
       expect(list.includes?("dep")).to be false
     end
 
-    xit 'can pop last item on string and return it' do
+    it 'can pop last item on string and return it' do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")

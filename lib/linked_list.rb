@@ -37,6 +37,16 @@ class LinkedList
     new_node.next_node = current_node.next_node
     current_node.next_node = new_node
   end
+
+  def pop
+    current_node = head
+    until current_node.next_node.next_node == nil
+      current_node = current_node.next_node
+    end
+    last_node = current_node.next_node
+    current_node.next_node = nil
+    last_node.data
+  end
   
   def count
     if head == nil
