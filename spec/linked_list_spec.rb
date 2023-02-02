@@ -26,7 +26,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe '#multiple nodes' do
+  describe '#append multiple nodes' do
     it 'can append another node' do
       list = LinkedList.new
       list.append("doop")
@@ -49,6 +49,20 @@ RSpec.describe LinkedList do
       list.append("deep")
 
       expect(list.to_string).to eq("doop deep")
+    end
+  end
+
+  describe '#insert and prepend' do
+    it 'can prepend a node' do
+      list = LinkedList.new
+      list.append("plop")
+
+      expect(to_string).to eq("plop")
+
+      list.append("suu")
+      list.prepend("dop")
+
+      expect(to_string).to eq("dop plop suu")
     end
   end
 end
