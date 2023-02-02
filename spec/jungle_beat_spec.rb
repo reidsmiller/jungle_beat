@@ -21,7 +21,7 @@ RSpec.describe JungleBeat do
       expect(jb.list.head.next_node.data).to eq("doo")
     end
 
-    xit 'can append even further' do
+    it 'can append even further' do
       jb = JungleBeat.new
 
       jb.append("deep doo ditt")

@@ -10,4 +10,8 @@ class JungleBeat
       self.list.append(data)
     end
   end
+
+  def count
+    list.count
+  end
 end
