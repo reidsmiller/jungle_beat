@@ -64,5 +64,24 @@ RSpec.describe LinkedList do
 
       expect(to_string).to eq("dop plop suu")
     end
+
+    it 'counts correctly' do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+
+      expect(list.count).to eq(3)
+    end
+
+    it 'can insert a node' do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+      list.insert(1, "woo")
+
+      expect(list.to_string).to eq("dop woo plop suu")
+    end
   end
 end
