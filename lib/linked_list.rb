@@ -30,10 +30,10 @@ class LinkedList
   
   def insert(index, data)
     current_node = head
+    new_node = Node.new(data)
     (index - 1).times do
       current_node = current_node.next_node
     end
-    new_node = Node.new(data)
     new_node.next_node = current_node.next_node
     current_node.next_node = new_node
   end
