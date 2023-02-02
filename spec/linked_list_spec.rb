@@ -3,7 +3,7 @@ require './lib/node'
 require './lib/linked_list'
 
 RSpec.describe LinkedList do
-  describe 'starts with a head'
+  describe '#head' do
     it 'exists' do
       list = LinkedList.new
 
@@ -11,17 +11,28 @@ RSpec.describe LinkedList do
       expect(list.head).to be nil
     end
 
-    xit 'counts nodes' do
+    it 'counts' do
       list = LinkedList.new
       list.append("doop")
 
       expect(list.count).to eq(1)
     end
 
-    xit 'creates string of data' do
+    it 'creates string' do
       list = LinkedList.new
       list.append("doop")
 
       expect(list.to_string).to eq("doop")
     end
+  end
+
+  describe '#multiple nodes' do
+    it 'can append another node' do
+      list = LinkedList.new
+      list.append("doop")
+      list.append("deep")
+
+      require 'pry'; binding.pry
+    end
+  end
 end
