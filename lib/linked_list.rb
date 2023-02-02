@@ -57,6 +57,11 @@ class LinkedList
     arr[index, length].join(" ")
   end
 
+  def includes?(data)
+    arr = self.to_array
+    arr.include?(data)
+  end
+
   def to_string
     array = []
     if head == nil

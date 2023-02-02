@@ -103,7 +103,7 @@ RSpec.describe LinkedList do
     end
 
 
-    xit 'knows if it includes a string' do
+    it 'knows if it includes data' do
       list = LinkedList.new
       list.append("deep")
       list.append("woo")
