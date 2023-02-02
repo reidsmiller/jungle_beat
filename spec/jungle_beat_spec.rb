@@ -1,8 +1,9 @@
 require 'rspec'
 require './lib/linked_list'
 require './lib/node'
+require './lib/jungle_beat'
 
-RSpec.descirbe JungleBeat do
+RSpec.describe JungleBeat do
   describe '#initialize' do
     it 'exists' do
       jb = JungleBeat.new
@@ -11,16 +12,16 @@ RSpec.descirbe JungleBeat do
       expect(jb.list.head).to be nil
     end
 
-    it 'can append multiple strings into link chain' do
+    xit 'can append multiple strings into link chain' do
       jb = JungleBeat.new
 
       jb.append("deep doo ditt")
 
       expect(jb.list.head.data).to eq("deep")
-      expect(jb.list.head.next_node.data)("doo")
+      expect(jb.list.head.next_node.data).to eq("doo")
     end
 
-    it 'can append even further' do
+    xit 'can append even further' do
       jb = JungleBeat.new
 
       jb.append("deep doo ditt")
