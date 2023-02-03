@@ -4,7 +4,7 @@ require './lib/node'
 require './lib/jungle_beat'
 
 RSpec.describe JungleBeat do
-  describe '#initialize' do
+  describe '#initialize and chain methods' do
     it 'exists' do
       jb = JungleBeat.new
 
@@ -28,6 +28,14 @@ RSpec.describe JungleBeat do
       jb.append("woo hoo shu")
 
       expect(jb.count).to eq(6)
+    end
+
+    it 'can prepend multiple strings into link chain' do
+      jb = JungleBeat.new("deep")
+
+      jb.prepend("tee tee tee Mississippi")
+
+      expect(jb.all).to eq("tee tee tee deep")
     end
   end
 
