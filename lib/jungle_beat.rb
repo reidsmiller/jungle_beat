@@ -46,4 +46,12 @@ class JungleBeat
   def all
     self.list.to_string
   end
+
+  def reset_rate
+    self.rate = 250
+  end
+
+  def reset_voice
+    self.voice = "Boing"
+  end
 end
