@@ -1,9 +1,11 @@
 class JungleBeat
-  attr_accessor :list, :data, :val_library
+  attr_accessor :list, :data, :val_library, :voice, :rate
   def initialize (data = nil)
     @list = LinkedList.new
-    @val_library = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu"]
+    @val_library = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "dop"]
     @data = self.autoappend(data)
+    @voice = "Boing"
+    @rate = 250
   end
 
   def append(data)
@@ -38,7 +40,7 @@ class JungleBeat
 
   def play
     beats = self.all
-    `say -r 250 -v Boing #{beats}`
+    `say -r #{rate} -v #{voice} #{beats}`
   end
 
   def all

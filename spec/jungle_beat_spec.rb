@@ -67,4 +67,36 @@ RSpec.describe JungleBeat do
       expect(jb.all).to eq("deep")
     end
   end
+
+  describe '#Speed and Voice' do
+    it 'has default voice and rate attributes' do
+      jb = JungleBeat.new("deep dop dop deep")
+
+      expect(jb.count).to eq(4)
+      expect(jb.voice).to eq("Boing")
+      expect(jb.rate).to eq(250)
+    end
+
+    it 'can change voice and rate' do
+      jb = JungleBeat.new("deep dop dop deep")
+
+      jb.voice = "Daniel"
+      jb.rate = 100
+
+      expect(jb.voice).to eq("Daniel")
+      expect(jb.rate).to eq(100)
+      jb.play
+    end
+
+    it 'can reset to default voice and rate' do
+      jb = JungleBeat.new("deep dop dop deep")
+
+      jb.reset_rate
+      jb.reset_voice
+
+      expect(jb.rate).to eq(250)
+      expect(jb.voice).to eq("Boing")
+      jb.play
+    end
+  end
 end
