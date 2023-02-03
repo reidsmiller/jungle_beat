@@ -50,12 +50,12 @@ RSpec.describe JungleBeat do
       expect(jb.all).to eq("deep")
     end
 
-    xit 'refuses entries not in validation library' do
+    it 'refuses entries not in validation library' do
       jb = JungleBeat.new("deep")
 
       jb.append("Mississippi")
 
-
+      expect(jb.all).to eq("deep")
     end
   end
 end
