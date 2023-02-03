@@ -9,7 +9,6 @@ class JungleBeat
   def append(data)
       arr = data.split(" ")
       arr.each do |data_s|
-        # require 'pry'; binding.pry
         if val_library.include?(data_s)
           self.list.append(data_s)
         end
@@ -21,6 +20,15 @@ class JungleBeat
       self.append(data)
     else
       data
+    end
+  end
+
+  def prepend(data)
+    arr = data.split(" ")
+    arr.each do |data_s|
+      if val_library.include?(data_s)
+        self.list.prepend(data_s)
+      end
     end
   end
 
