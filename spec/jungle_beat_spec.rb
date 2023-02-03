@@ -47,8 +47,15 @@ RSpec.describe JungleBeat do
     it 'can call all as to_string' do
       jb = JungleBeat.new("deep")
       
-      require 'pry'; binding.pry
       expect(jb.all).to eq("deep")
+    end
+
+    xit 'refuses entries not in validation library' do
+      jb = JungleBeat.new("deep")
+
+      jb.append("Mississippi")
+
+
     end
   end
 end
