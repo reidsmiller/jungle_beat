@@ -16,7 +16,11 @@ class JungleBeat
   end
 
   def play
-    beats = self.list.to_string
+    beats = self.all
     `say -r 250 -v Boing #{beats}`
+  end
+
+  def all
+    self.list.to_string
   end
 end
