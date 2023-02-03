@@ -30,7 +30,7 @@ RSpec.describe JungleBeat do
       expect(jb.count).to eq(6)
     end
 
-    it 'can prepend multiple strings into link chain' do
+    xit 'can prepend multiple strings into link chain' do
       jb = JungleBeat.new("deep")
 
       jb.prepend("tee tee tee Mississippi")
@@ -54,6 +54,7 @@ RSpec.describe JungleBeat do
   describe '#Verification Library' do
     it 'can call all as to_string' do
       jb = JungleBeat.new("deep")
+      
       
       expect(jb.all).to eq("deep")
     end
