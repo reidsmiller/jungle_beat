@@ -46,7 +46,8 @@ RSpec.describe JungleBeat do
   describe '#Verification Library' do
     it 'can call all as to_string' do
       jb = JungleBeat.new("deep")
-
+      
+      require 'pry'; binding.pry
       expect(jb.all).to eq("deep")
     end
   end

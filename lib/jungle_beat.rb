@@ -1,13 +1,14 @@
 class JungleBeat
-  attr_accessor :list
-  def initialize (string)
-    @list = LinkedList.new(string)
+  attr_accessor :list, :string
+  def initialize (string = nil)
+    @list = LinkedList.new
+    @string = self.append(string)
   end
 
-  def append(string)
-    data_s = string.split(" ")
-    data_s.each do |data|
-      self.list.append(data)
+  def append(data)
+    data_m = data.split(" ")
+    data_m.each do |data_s|
+      self.list.append(data_s)
     end
   end
 
