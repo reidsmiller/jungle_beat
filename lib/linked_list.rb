@@ -29,23 +29,31 @@ class LinkedList
   end
   
   def insert(index, data)
-    current_node = head
-    new_node = Node.new(data)
-    (index - 1).times do
-      current_node = current_node.next_node
+    if head == nil
+      self.head = Node.new(data)
+    else
+      current_node = head
+      new_node = Node.new(data)
+      (index - 1).times do
+        current_node = current_node.next_node
+      end
+      new_node.next_node = current_node.next_node
+      current_node.next_node = new_node
     end
-    new_node.next_node = current_node.next_node
-    current_node.next_node = new_node
   end
 
   def pop
-    current_node = head
-    until current_node.next_node.next_node == nil
-      current_node = current_node.next_node
+    if head == nil
+      elf.head = Node.new(data)
+    else
+      current_node = head
+      until current_node.next_node.next_node == nil
+        current_node = current_node.next_node
+      end
+      last_node = current_node.next_node
+      current_node.next_node = nil
+      last_node.data
     end
-    last_node = current_node.next_node
-    current_node.next_node = nil
-    last_node.data
   end
   
   def count

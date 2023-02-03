@@ -42,4 +42,12 @@ RSpec.describe JungleBeat do
       jb.play
     end
   end
+
+  describe '#Verification Library' do
+    it 'can call all as to_string' do
+      jb = JungleBeat.new("deep")
+
+      expect(jb.all).to eq("deep")
+    end
+  end
 end

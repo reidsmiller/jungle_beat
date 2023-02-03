@@ -1,7 +1,7 @@
 class JungleBeat
   attr_accessor :list
-  def initialize
-    @list = LinkedList.new
+  def initialize (string)
+    @list = LinkedList.new(string)
   end
 
   def append(string)
@@ -17,6 +17,6 @@ class JungleBeat
 
   def play
     beats = self.list.to_string
-    `say -r 500 -v Boing #{beats}`
+    `say -r 250 -v Boing #{beats}`
   end
 end
