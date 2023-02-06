@@ -83,7 +83,6 @@ RSpec.describe JungleBeat do
       jb.voice = "Daniel"
       jb.rate = 100
 
-      require 'pry'; binding.pry
       expect(jb.voice).to eq("Daniel")
       expect(jb.rate).to eq(100)
       jb.play
@@ -96,6 +95,7 @@ RSpec.describe JungleBeat do
       jb.reset_rate
       jb.reset_voice
 
+      require 'pry'; binding.pry
       expect(jb.rate).to eq(250)
       expect(jb.voice).to eq("Boing")
       jb.play
