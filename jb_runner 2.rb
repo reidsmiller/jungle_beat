@@ -12,7 +12,7 @@ p 'First, what phrase would you like to intone?'
 jb = JungleBeat.new(gets.chomp)
 
 p "-------------------------------------------------"
-p "Your phrase is: #{jb.all}"
+p "Your phrase is #{jb.all}"
 p "If you are satisfied with your phrase, enter 'satisfied'" 
 p "If you would like to re-enter your phrase, enter 're-do'"
 
@@ -20,7 +20,7 @@ ans = (gets.chomp)
 while ans == "re-do"
   p "Enter your new phrase"
   jb = JungleBeat.new(gets.chomp)
-  p "Your phrase is: #{jb.all}"
+  p "Your phrase is #{jb.all}"
   p "If you are satisfied with your phrase, enter 'satisfied'" 
   p "If you would like to re-enter your phrase, enter 're-do'"
   ans = (gets.chomp)
@@ -31,7 +31,7 @@ p 'How many times would you like the computer to read your killer beats?'
 
 jb.loop(gets.chomp.to_i)
 
-p 'What rate would you like it to be read? (300 is super fast, 100 is slow)'
+p 'What rate would you like it to be read? (~500 is super fast, 100 is slow)'
 
 jb.rate = (gets.chomp.to_i)
 

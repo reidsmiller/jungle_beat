@@ -15,7 +15,7 @@ class JungleBeat
       if val_library.include?(data_s)
         self.list.append(data_s)
       else
-        p "#{data_s} <-- is not an approved word. Here is a list of approved words. I have taken the liberty of removing the words not on the list."
+        p "#{data_s} <-- is not an approved word. Here is a list of approved words. I have taken the liberty of removing words from your phrase that were not on the list."
         p self.val_library
         arr.delete(data_s)
       end
@@ -36,7 +36,7 @@ class JungleBeat
       if val_library.include?(data_s)
         self.list.prepend(data_s)
       else
-        p "#{data_s} <-- is not an approved word. Here is a list of approved words. I have taken the liberty of removing the words not on the list."
+        p "#{data_s} <-- is not an approved word. Here is a list of approved words. I have taken the liberty of removing words from your phrase that were not on the list."
         p self.val_library
       end
     end
