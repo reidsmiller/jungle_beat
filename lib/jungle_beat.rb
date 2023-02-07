@@ -9,12 +9,17 @@ class JungleBeat
   end
 
   def append(data)
-      arr = data.split(" ")
-      arr.each do |data_s|
-        if val_library.include?(data_s)
-          self.list.append(data_s)
-        end
+    data.downcase
+    arr = data.split(" ")
+    arr.each do |data_s|
+      if val_library.include?(data_s)
+        self.list.append(data_s)
+      else
+        p "#{data_s} is not an approved word. Here is a list of approved words"
+        p self.val_library
+        arr.delete(data_s)
       end
+    end
   end
 
   def autoappend(data)
