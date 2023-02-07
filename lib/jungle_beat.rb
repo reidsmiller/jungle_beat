@@ -30,6 +30,9 @@ class JungleBeat
     arr.each do |data_s|
       if val_library.include?(data_s)
         self.list.prepend(data_s)
+      else
+        p "#{data_s} is not an approved word. Here is a list of approved words"
+        p self.val_library
       end
     end
   end
