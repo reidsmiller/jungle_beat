@@ -36,39 +36,6 @@ puts "-----------------------------------------------"
 
 jb.loop(gets.chomp.to_i)
 
-puts "-----------------------------------------------"
-puts 'What rate would you like it to be read? (300 is super fast, 100 is slow)'
-puts "-----------------------------------------------"
-
-jb.rate = (gets.chomp.to_i)
-
-puts '-------------------------------------------------'
-puts 'What voice would you like to read it?'
-puts 'Some options are: Alice, Cello, Jester, Boing, Whisper, Albert, Organ, Superstar, and Trinoids.'
-puts "-----------------------------------------------"
-
-jb.voice = (gets.chomp)
-
-puts '-----------------Okay!!!!!!!!----------------------'
-puts "We're all set!! You've set up your beats!!!"
-puts "Are you ready for your beat so killer that today will forever be remembered as the day you created these (un)godly amazing killer sounds?!?!?"
-puts "(yes/no)"
-puts "-----------------------------------------------"
-
-ans = (gets.chomp)
-if ans == "yes"
-  puts "-----------------------------------------------"
-  puts "WOOOO HERE THEY ARE"
-  puts "-----------------------------------------------"
-else
-  puts "-----------------------------------------------"
-  puts "TOO BAD!!!!!!! WE'VE COME TOO FAR TO BACK OUT NOW!!!!"
-  puts "-----------------------------------------------"
-end
-
-jb.play
-
-puts "-----------------------------------------------"
-puts "WOO!! Grammy's here we come!!!"
-puts "Thank you for your inspirational beats."
-puts "-----------------------------------------------"
+# Replayable method section for sandboxing rate and voice
+jb.set_rate_and_voice
+jb.play_and_again

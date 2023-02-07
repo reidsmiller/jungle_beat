@@ -66,10 +66,71 @@ class JungleBeat
   end
 
   def reset_rate
-    self.rate = 250
+    self.rate = 200
   end
 
   def reset_voice
     self.voice = "Boing"
+  end
+
+  def set_rate_and_voice
+    self.reset_rate
+    self.reset_voice
+    puts "-----------------------------------------------"
+    puts 'What rate would you like it to be read? (300 is super fast, 100 is slow)'
+    puts "Enter 'default' for the default rate of 200."
+    puts "-----------------------------------------------"
+
+    rate = (gets.chomp)
+    if rate != "default"
+      self.rate = rate.to_i
+    end
+
+    puts '-------------------------------------------------'
+    puts 'What voice would you like to read it?'
+    puts 'Some options are: Alice, Cello, Jester, Whisper, Albert, Organ, Superstar, and Trinoids.'
+    puts "Enter 'default' for the default voice 'Boing'."
+    puts "-----------------------------------------------"
+
+    voice = (gets.chomp)
+    if voice != "default"
+      self.voice = voice
+    end
+  end
+
+  def play_and_again
+    puts '-----------------Okay!!!!!!!!----------------------'
+    puts "We're all set!! You've set up your beats!!!"
+    puts "Are you ready for your beat so killer that today will forever be remembered as the day you created these (un)godly amazing killer sounds?!?!?"
+    puts "(yes/no)"
+    puts "-----------------------------------------------"
+  
+    ans = (gets.chomp)
+    if ans == "yes"
+      puts "-----------------------------------------------"
+      puts "WOOOO HERE THEY ARE"
+      puts "-----------------------------------------------"
+    else
+      puts "-----------------------------------------------"
+      puts "TOO BAD!!!!!!! WE'VE COME TOO FAR TO BACK OUT NOW!!!!"
+      puts "-----------------------------------------------"
+    end
+  
+    self.play
+  
+    puts "-----------------------------------------------"
+    puts "WOO!! Grammy's here we come!!!"
+    puts "Would you like to play around with your beats some more?"
+    puts "-----------------------------------------------"
+    ans = (gets.chomp)
+    if ans == "yes"
+      self.set_rate_and_voice
+      self.play_and_again
+    else
+      puts "-----------------------------------------------"
+      puts "Thank you for your inspirational beats."
+      puts "Keep on Rockin'!"
+      puts "-----------------------------------------------"
+    end
   end
 end
