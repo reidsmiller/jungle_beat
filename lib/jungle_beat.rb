@@ -43,6 +43,13 @@ class JungleBeat
     `say -r #{rate} -v #{voice} #{beats}`
   end
 
+  def loop(num)
+    beats = self.all
+    (num - 1).times do
+      self.append(beats)
+    end
+  end
+
   def all
     self.list.to_string
   end
