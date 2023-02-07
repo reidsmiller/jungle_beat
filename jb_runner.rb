@@ -15,13 +15,14 @@ p "-------------------------------------------------"
 p "If you would like to re-enter your phrase, enter 'yes', if you are satisfied, 'no'"
 
 ans = (gets.chomp)
-if ans == "yes"
+while ans == "yes"
   p "Enter your new phrase"
   jb = JungleBeat.new(gets.chomp)
-else
-  p "Great!"
+  p "If you would like to re-enter your phrase, enter 'yes', if you are satisfied, 'no'"
+  ans = (gets.chomp)
 end
 
+p "Great!"
 p 'How many times would you like the computer to read your killer beats?'
 
 jb.loop(gets.chomp.to_i)
@@ -52,4 +53,5 @@ end
 
 jb.play
 
-"WOO!! Grammy's here we come!!!"
+p "WOO!! Grammy's here we come!!!"
+p "Thank you for your inspirational beats."
