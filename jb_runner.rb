@@ -16,18 +16,8 @@ puts "If you are satisfied with your phrase, enter 'satisfied'"
 puts "If you would like to re-enter your phrase, enter 're-do'"
 puts "-----------------------------------------------"
 
-ans = (gets.chomp)
-while ans == "re-do"
-  puts "-----------------------------------------------"
-  puts "Enter your new phrase"
-  jb = JungleBeat.new(gets.chomp)
-  puts "-----------------------------------------------"
-  puts "Your phrase is: '#{jb.all}'"
-  puts "If you are satisfied with your phrase, enter 'satisfied'" 
-  puts "If you would like to re-enter your phrase, enter 're-do'"
-  puts "-----------------------------------------------"
-  ans = (gets.chomp)
-end
+# Confirm phrase loop
+jb.phrase_conf
 
 puts "-----------------------------------------------"
 puts "Great!"
@@ -36,6 +26,6 @@ puts "-----------------------------------------------"
 
 jb.loop(gets.chomp.to_i)
 
-# Replayable method section for sandboxing rate and voice
+# Replayable method for sandboxing rate and voice
 jb.set_rate_and_voice
 jb.play_and_again

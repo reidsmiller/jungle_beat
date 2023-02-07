@@ -72,7 +72,23 @@ class JungleBeat
   def reset_voice
     self.voice = "Boing"
   end
-
+  
+  # Terminal interfacing methods through jb_runner
+  def phrase_conf
+    ans = (gets.chomp)
+    while ans == "re-do"
+      puts "-----------------------------------------------"
+      puts "Enter your new phrase"
+      jb = JungleBeat.new(gets.chomp)
+      puts "-----------------------------------------------"
+      puts "Your phrase is: '#{jb.all}'"
+      puts "If you are satisfied with your phrase, enter 'satisfied'" 
+      puts "If you would like to re-enter your phrase, enter 're-do'"
+      puts "-----------------------------------------------"
+      ans = (gets.chomp)
+    end
+  end
+  
   def set_rate_and_voice
     self.reset_rate
     self.reset_voice
@@ -80,24 +96,24 @@ class JungleBeat
     puts 'What rate would you like it to be read? (300 is super fast, 100 is slow)'
     puts "Enter 'default' for the default rate of 200."
     puts "-----------------------------------------------"
-
+    
     rate = (gets.chomp)
     if rate != "default"
       self.rate = rate.to_i
     end
-
+    
     puts '-------------------------------------------------'
     puts 'What voice would you like to read it?'
     puts 'Some options are: Alice, Cello, Jester, Whisper, Albert, Organ, Superstar, and Trinoids.'
     puts "Enter 'default' for the default voice 'Boing'."
     puts "-----------------------------------------------"
-
+    
     voice = (gets.chomp)
     if voice != "default"
       self.voice = voice
     end
   end
-
+  
   def play_and_again
     puts '-----------------Okay!!!!!!!!----------------------'
     puts "We're all set!! You've set up your beats!!!"
