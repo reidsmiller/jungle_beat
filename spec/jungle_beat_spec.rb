@@ -95,11 +95,22 @@ RSpec.describe JungleBeat do
       jb.reset_rate
       jb.reset_voice
 
-      require 'pry'; binding.pry
       expect(jb.rate).to eq(250)
       expect(jb.voice).to eq("Boing")
       jb.play
       expect(jb.count).to eq(4)
+    end
+  end
+
+  describe '#Looper' do
+    it 'can loop 2 times' do
+      jb = JungleBeat.new("dop shu woo hoo")
+
+      jb.loop(2)
+      expect(jb.all).to eq("dop shu woo hoo dop shu woo hoo")
+
+      jb.loop(6)
+      jb.play
     end
   end
 end
